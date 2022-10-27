@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music APP</title>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loading" id="loading-spinner">
+        <div class="spin"></div>
+    </div>
+    <header>
+        <h1>Ramusic App</h1>
+        <p class="header-description">¡Encontrá a tus artistas favoritos!</p>
+    </header>
+    <main id="main">
+        <div id="artist-card-container"></div>
+        <section class="navigation-tools">
+            <div class="navigation-btn-container">
+                <button id="previous-page-btn" class="navigation-btn">⬅</button>
+                <button id="next-page-btn" class="navigation-btn">➡</button>
+                <button id="back-btn" class="navigation-btn">🔙</button>
+            </div>
+            <p class="page">Página <span id="n-page">1</span></p>
+        </section>
+    </main>
+    <footer id="footer">
+        <a id="sign" href="https://github.com/RamiroPerez07">Ramiro Perez <i class="fa-brands fa-github"></i></a>
+    </footer>
+    <!--Custom JS-->
+    <script src="./index.js"></script>
+</body>
+</html>
