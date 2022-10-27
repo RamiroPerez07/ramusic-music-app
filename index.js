@@ -137,7 +137,7 @@ function createHtmlTrackList(track){
         <p class="track-description pos-txt"><span class="highlight-text">#</span> ${track.id}</p>
         <p class="track-description song-txt"><span class="highlight-text">Canción:</span> ${track.name}</p>
         <p class="track-description alb-txt"><span class="highlight-text">Album:</span> ${track.album}</p>
-        <audio controls>${track.audio}</audio>
+        <audio src="${track.audio}" controls>${track.audio}</audio>
     </div>
     `
 }
