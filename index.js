@@ -5,6 +5,7 @@ const previousBtn = document.getElementById("previous-page-btn")
 const backBtn = document.getElementById("back-btn")
 const loadingSpinner = document.getElementById("loading-spinner")
 const nPage = document.getElementById("n-page")
+const pageText = document.getElementById("page")
 let from = 8;
 let page = 1;
 // API https://developer.prod.napster.com/api/v2.2#images-apis
@@ -74,7 +75,18 @@ function updatePageNumber(page){
     nPage.textContent = page
 }
 
+function hidePageText(){
+    pageText.style.display = "none";
+}
+
+function showPageText(){
+    pageText.style.display = "block";
+}
+
+
+
 async function showNextPage(){
+    if (container.classList.contains("list-container")) return
     from = from + 8;
     page = page + 1;
     updatePageNumber(page);
@@ -84,6 +96,7 @@ async function showNextPage(){
 }
 
 async function showPreviousPage(){
+    if (container.classList.contains("list-container")) return
     if (from==8 || page<=1) return
     from = from - 8
     page = page - 1;
@@ -159,16 +172,19 @@ function showInfoAboutArtist(event){
     getInfoAboutArtist(event.target.parentElement.dataset.id)
     .then(arrTrackInfo => {
         renderArtistTracks(arrTrackInfo);
+        hidePageText();
     })
 }
 
 function returnToCardContainer(){
+    if (!container.classList.contains("list-container")) return
     try{
         showLoadAnimation();
         clearContainer();
         showBtnDisable(backBtn)
         container.classList.remove("list-container");
         getArtists(from);
+        showPageText();
         hideLoadAnimation();
     }catch(err){
         console.log(err)
