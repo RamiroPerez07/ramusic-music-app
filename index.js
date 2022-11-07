@@ -35,7 +35,6 @@ async function getArtists(from, n_artists= 8){
                 id : artist.id,
                 name: artist.name,
                 img : artist.links.images.href.toString().slice(28)+"/356x237.jpg",
-                genres : artist.links.genres.href,
                 topTracks: artist.links.topTracks.href
             }
         })
