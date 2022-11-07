@@ -29,7 +29,7 @@ async function getArtists(from, n_artists= 8){
         const res = await fetch(url+key+queryParameters)
         const data = await res.json()
         const arrArtistsFull = data.artists
-        console.log( arrArtistsFull)   //=>obtengo todas las caracteristicas de la consulta
+        //console.log( arrArtistsFull)   //=>obtengo todas las caracteristicas de la consulta
         const arrObjArtistsTrim = arrArtistsFull.map(artist => {  // => recorto los resultados, y traigo solo lo que me interesa
             let imgUrl = "https://api.napster.com/imageserver/v2"+artist.links.images.href.toString().slice(28)+"/356x237.jpg"
             // console.log(url)
