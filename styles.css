@@ -115,6 +115,8 @@ main{
     padding-bottom: 45px;
     display: grid;
     grid-auto-rows: 1fr 35px;
+    align-items: start;
+    justify-items: center;
 }
 
 #artist-card-container{
