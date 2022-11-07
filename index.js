@@ -30,16 +30,22 @@ async function getArtists(from, n_artists= 8){
         const data = await res.json()
         const arrArtistsFull = data.artists
         console.log( arrArtistsFull)   //=>obtengo todas las caracteristicas de la consulta
-        const arrObjArtistsTrim = arrArtistsFull.map(artist => {  // => recorto los resultados, y traigo solo lo que me interesa
+        const arrObjArtistsTrim = arrArtistsFull.map(async artist => {  // => recorto los resultados, y traigo solo lo que me interesa
+            let url = "http://api.napster.com/imageserver/v2"+artist.links.images.href.toString().slice(28)+"/356x237.jpg"
+            console.log(url)
+            const res = await fetch(url)
+            const imgUrl = res.ok? url: "./img/img-not-found.png"
             return{
                 id : artist.id,
                 name: artist.name,
-                img : artist.links.images.href.toString().slice(28)+"/356x237.jpg",
+                img : imgUrl,
                 topTracks: artist.links.topTracks.href
             }
         })
+        const arrObjArtists = await Promise.all(arrObjArtistsTrim)
+        console.log(arrObjArtists)
         //console.log(arrObjArtistsTrim)
-        showArtists(arrObjArtistsTrim)
+        showArtists(arrObjArtists)
         hideLoadAnimation();
     }catch(err){
         console.log(err)
@@ -58,7 +64,7 @@ function createCard(objArtist){
     return `
     <div class="card" data-id=${objArtist.id}>
         <h2 class="artist-name">${objArtist.name}</h2>
-        <div class="card-artist-img" style="background-image: url('https://api.napster.com/imageserver/v2${objArtist.img}')"></div>
+        <div class="card-artist-img" style="background-image: url('${objArtist.img}')"></div>
     </div>
     `
 }
