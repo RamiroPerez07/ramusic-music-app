@@ -30,11 +30,12 @@ async function getArtists(from, n_artists= 8){
         const data = await res.json()
         const arrArtistsFull = data.artists
         console.log( arrArtistsFull)   //=>obtengo todas las caracteristicas de la consulta
-        const arrObjArtistsTrim = arrArtistsFull.map(async artist => {  // => recorto los resultados, y traigo solo lo que me interesa
-            let url = "http://api.napster.com/imageserver/v2"+artist.links.images.href.toString().slice(28)+"/356x237.jpg"
-            console.log(url)
-            const res = await fetch(url)
-            const imgUrl = res.ok? url: "./img/img-not-found.png"
+        const arrObjArtistsTrim = arrArtistsFull.map(artist => {  // => recorto los resultados, y traigo solo lo que me interesa
+            let imgUrl = "https://api.napster.com/imageserver/v2"+artist.links.images.href.toString().slice(28)+"/356x237.jpg"
+            // console.log(url)
+            // const res = await fetch(url, {method:"POST", mode:"no-cors"})
+            // console.log(res)
+            // const imgUrl = res.ok? url: "./img/img-not-found.png"
             return{
                 id : artist.id,
                 name: artist.name,
@@ -42,10 +43,10 @@ async function getArtists(from, n_artists= 8){
                 topTracks: artist.links.topTracks.href
             }
         })
-        const arrObjArtists = await Promise.all(arrObjArtistsTrim)
-        console.log(arrObjArtists)
+        // const arrObjArtists = await Promise.all(arrObjArtistsTrim)
+        // console.log(arrObjArtists)
         //console.log(arrObjArtistsTrim)
-        showArtists(arrObjArtists)
+        showArtists(arrObjArtistsTrim)
         hideLoadAnimation();
     }catch(err){
         console.log(err)

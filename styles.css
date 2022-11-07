@@ -29,9 +29,19 @@
     --fw-bold1: 800;
 }
 
+html{
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    width: 100%;
+    align-items: start;
+    justify-items: center;
+}
+
 body{
     background-color: var(--color0);
     width: 100%;
+    max-width: 1980px;
     min-height: 100vh;
     display: grid;
     justify-items: center;
@@ -97,6 +107,7 @@ h1{
 
 main{
     height: 100%;
+    max-height: 600px;
     width: 100%;
     padding-top: 0px;
     padding-left: 10px;
