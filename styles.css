@@ -33,7 +33,7 @@ html{
     display: grid;
     grid-template-columns: 1fr;
     min-height: 100vh;
-    height: 100%;
+    height: auto;
     width: 100%;
     align-items: start;
     justify-items: center;
@@ -43,6 +43,7 @@ body{
     background-color: var(--color0);
     width: 100%;
     max-width: 1980px;
+    height: auto;
     min-height: 100vh;
     display: grid;
     justify-items: center;
