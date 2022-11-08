@@ -122,8 +122,8 @@ main{
 }
 
 #artist-card-container{
-    height: 100%;
-    max-height: 600px;
+    height: auto;
+    max-height: 1600px;
     width: 100%;
     background-color: var(--color0);
     display: grid;
@@ -139,7 +139,7 @@ main{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 30px;
     grid-auto-rows: 150px;
-    max-height: 1600px;
+    max-height: 2600px;
     gap: 10px;
     width: 100%;
     justify-self: center;
