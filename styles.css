@@ -129,7 +129,7 @@ main{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-rows: 200px;
     place-items: center;
-    align-content: center;
+    align-content: start;
     gap: 20px;
     padding: 15px 0;
 }
