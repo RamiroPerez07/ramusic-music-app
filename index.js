@@ -65,7 +65,7 @@ function createCard(objArtist){
     return `
     <div class="card" data-id=${objArtist.id}>
         <h2 class="artist-name">${objArtist.name}</h2>
-        <div class="card-artist-img" style="background-image: url('${objArtist.img?objArtist.img:"./img/img-not-found.png"}')"></div>
+        <div class="card-artist-img" style="background-image: url('${objArtist.img}'), url('./img/img-not-found.png')"></div>
     </div>
     `
 }
