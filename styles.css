@@ -107,7 +107,7 @@ h1{
 
 main{
     height: 100%;
-    max-height: auto;
+    max-height: 600px;
     width: 100%;
     padding-top: 0px;
     padding-left: 10px;
