@@ -6,7 +6,7 @@ const backBtn = document.getElementById("back-btn")
 const loadingSpinner = document.getElementById("loading-spinner")
 const nPage = document.getElementById("n-page")
 const pageText = document.getElementById("page")
-let from = 8;
+let from = 32;
 let page = 1;
 // API https://developer.prod.napster.com/api/v2.2#images-apis
 const key = "Y2I1Njg4NDktNThjYS00OTg5LTk2NjgtMjFhOTVjMzY0NTVh"
@@ -15,7 +15,7 @@ const url = "https://api.napster.com/v2.2/artists/top?apikey="
 async function getArtists(from, n_artists= 8){
     try{
         showLoadAnimation();
-        if (from >= 16 && from <= 1000){
+        if (from >= 40 && from <= 1000){
             showBtnEnable(previousBtn)
         }else{
             showBtnDisable(previousBtn)
