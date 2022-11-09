@@ -103,7 +103,7 @@ async function showNextPage(){
 
 async function showPreviousPage(){
     if (container.classList.contains("list-container")) return
-    if (from==8 || page<=1) return
+    if (from==32 || page<=1) return
     from = from - 8
     page = page - 1;
     updatePageNumber(page)
